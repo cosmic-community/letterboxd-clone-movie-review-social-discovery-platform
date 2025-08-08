@@ -83,7 +83,7 @@ export default function MovieTrailer({ trailerUrl, movieTitle, className }: Movi
                 <ExternalLink className="h-12 w-12 mb-4" />
                 <p className="text-lg mb-4">External trailer link</p>
                 <a
-                  href={trailerUrl || '#'}
+                  href={trailerUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary flex items-center gap-2"
