@@ -24,7 +24,7 @@ export default function MovieTrailer({ trailerUrl, movieTitle, className }: Movi
   }
 
   const videoId = getYouTubeVideoId(trailerUrl)
-  const embedUrl = videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0` : trailerUrl
+  const embedUrl = videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0` : trailerUrl || ''
 
   const openModal = () => {
     setIsModalOpen(true)
