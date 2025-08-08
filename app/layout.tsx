@@ -1,6 +1,6 @@
+import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CosmicBadge from '@/components/CosmicBadge'
@@ -8,9 +8,15 @@ import CosmicBadge from '@/components/CosmicBadge'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Letterboxd Clone - Movie Review & Social Discovery Platform',
-  description: 'Discover films, write reviews, create lists, and track your viewing history in this cinematic social platform.',
-  keywords: 'movies, reviews, letterboxd, cinema, film, social, discovery, watchlist',
+  title: 'Letterboxd Clone - Movie Review & Social Discovery',
+  description: 'Discover, review, and track the films you love. A social movie platform for cinephiles.',
+  keywords: 'movies, reviews, films, cinema, social, discovery, ratings, watchlist',
+  authors: [{ name: 'Letterboxd Clone Team' }],
+  openGraph: {
+    title: 'Letterboxd Clone - Movie Review & Social Discovery',
+    description: 'Discover, review, and track the films you love',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
@@ -24,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        <main className="min-h-screen">
+        <main>
           {children}
         </main>
         <Footer />

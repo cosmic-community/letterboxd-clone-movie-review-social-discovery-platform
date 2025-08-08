@@ -1,183 +1,190 @@
-# Letterboxd Clone - Movie Review & Social Discovery Platform
+# 🎬 Letterboxd Clone - Movie Review & Social Discovery Platform
 
-![App Preview](https://imgix.cosmicjs.com/0a40d350-7458-11f0-a051-23c10f41277a-photo-1440404653325-ab127d49abc1-1754658191893.jpg?w=1200&h=300&fit=crop&auto=format,compress)
+A modern movie review and social discovery platform built with Next.js, TypeScript, and Cosmic CMS. Discover films, read reviews, create lists, and track your viewing history in a beautifully designed, cinematic interface.
 
-A sophisticated movie review and social discovery platform inspired by Letterboxd, built with Next.js 15 and Cosmic CMS. This cinematic web application enables users to discover films, write reviews, create curated lists, and track their viewing history in a beautifully designed, social environment.
+## ✨ Features
 
-## Features
+### 🎥 Core Movie Features
+- **Movie Database** - Comprehensive movie information with IMDb integration
+- **Advanced Search** - Find movies by title, director, cast, genre, and more
+- **Movie Details** - Rich movie pages with posters, trailers, cast, and crew information
+- **Related Movies** - Smart recommendations based on genres and directors
 
-- 🎬 **Rich Movie Database** - Complete movie information with IMDb integration, cast details, ratings, and high-quality poster images
-- ⭐ **Social Review System** - Write detailed reviews with star ratings, spoiler warnings, and rewatch tracking  
-- 📝 **Personal Movie Tracking** - Maintain watchlists, mark movies as watched, and track personal ratings and viewing dates
-- 📚 **Curated Lists & Collections** - Create and discover public, private, or collaborative movie lists with cover images
-- 🔍 **Advanced Discovery** - Filter by genre, year, rating, and country with intelligent search and recommendations
-- 👥 **Community Features** - User profiles, activity tracking, and social movie discovery
-- 🎯 **Movie Submissions** - Community-driven movie additions with admin approval workflow
-- 📊 **User Analytics** - Personal viewing statistics and rating history
-- 💫 **Cinematic Design** - Premium dark theme optimized for movie discovery and visual storytelling
+### ⭐ Review System
+- **User Reviews** - Rate and review movies with detailed feedback
+- **Star Ratings** - 10-point rating system
+- **Spoiler Protection** - Toggle spoiler warnings for sensitive content
+- **Review Interactions** - Like reviews and track rewatches
 
-## ## Clone this Bucket and Code Repository
+### 📋 Lists & Collections
+- **Curated Lists** - Create and share movie collections
+- **Public/Private Lists** - Control visibility of your movie lists
+- **Cover Images** - Beautiful visual representations of your lists
+- **Collaborative Lists** - Work together on movie collections
 
-Want to create your own version of this project with all the content and structure? Clone this Cosmic bucket and code repository to get started instantly:
+### 👥 People & Credits
+- **Cast & Crew** - Detailed profiles for directors, actors, and crew
+- **Filmography** - Complete filmographies for people in the database
+- **Biography** - Rich biographical information and career highlights
 
-[![Clone this Bucket and Code Repository](https://img.shields.io/badge/Clone%20this%20Bucket-29abe2?style=for-the-badge&logo=cosmic&logoColor=white)](https://app.cosmic-staging.com/projects/new?clone_bucket=6895f0c1af5d4c334a9b7557&clone_repository=6895f746af5d4c334a9b757e)
+### 📊 Personal Tracking
+- **Watchlist** - Keep track of movies you want to watch
+- **Watch Status** - Mark movies as watched, currently watching, or want to watch
+- **Personal Ratings** - Rate movies and track your viewing history
+- **Personal Notes** - Add private notes to your movie experiences
 
-## Prompts
+### 🎯 Social Features
+- **Movie Submissions** - Community-driven movie database expansion
+- **User Profiles** - Track your movie journey and statistics
+- **Community Reviews** - Discover what others think about films
 
-This application was built using the following prompts to generate the content structure and code:
+## 🚀 Tech Stack
 
-### Content Model Prompt
+- **Frontend**: Next.js 15, React 18, TypeScript
+- **Styling**: Tailwind CSS with custom design system
+- **CMS**: Cosmic CMS for content management
+- **Icons**: Lucide React
+- **Package Manager**: Bun
+- **Deployment**: Vercel-ready
 
-> I want to build a https://letterboxd.com/ clone.
+## 🎨 Design Features
 
-### Code Generation Prompt
+- **Dark Theme** - Cinematic dark interface optimized for movie content
+- **Responsive Design** - Beautiful on desktop, tablet, and mobile
+- **Image Optimization** - Automatic image optimization with Imgix
+- **Smooth Animations** - Polished transitions and interactions
+- **Accessibility** - ARIA labels and keyboard navigation support
 
-> You are building a movie review and social discovery platform similar to Letterboxd using the Cosmic CMS content model. Here's everything you need to create an engaging, functional movie database website.
+## 📁 Project Structure
 
-🎯 Project Overview
-Build a social movie platform where users can discover films, read reviews, create lists, and track their viewing history. The site should feel cinematic and encourage movie discovery.
+```
+├── app/                          # Next.js App Router pages
+│   ├── movies/                   # Movie browsing and details
+│   ├── reviews/                  # Review listings
+│   ├── lists/                    # Movie lists and collections
+│   ├── people/                   # Cast and crew profiles
+│   ├── watchlist/               # Personal watchlist
+│   └── movie-submissions/       # Community movie submissions
+├── components/                   # Reusable React components
+│   ├── MovieCard.tsx            # Movie poster card
+│   ├── ReviewCard.tsx           # Review display component
+│   ├── PersonCard.tsx           # Cast/crew profile card
+│   ├── WatchlistButton.tsx      # Watchlist toggle
+│   ├── RatingStars.tsx          # Interactive rating component
+│   └── ...more
+├── lib/                         # Utility functions
+│   ├── cosmic.ts                # Cosmic CMS API functions
+│   └── utils.ts                 # Helper utilities
+├── hooks/                       # Custom React hooks
+│   ├── useMovieState.ts         # Movie tracking state
+│   └── useWatchlist.ts          # Watchlist management
+└── types.ts                     # TypeScript type definitions
+```
 
-The app has been tailored to work with your existing Cosmic content structure and includes all the features requested above.
+## 🛠️ Installation & Setup
 
-## Technologies Used
-
-- **Next.js 15** - React framework with App Router
-- **TypeScript** - Type-safe development
-- **Tailwind CSS** - Utility-first CSS framework
-- **Cosmic CMS** - Headless CMS for content management
-- **Imgix** - Image optimization and transformation
-- **Lucide React** - Beautiful icon library
-- **Inter Font** - Modern typography
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ or Bun
-- A Cosmic account and bucket with the movie database content model
-
-### Installation
-
-1. Clone this repository
+1. **Clone the repository**
 ```bash
 git clone <repository-url>
 cd letterboxd-clone
 ```
 
-2. Install dependencies
+2. **Install dependencies**
 ```bash
 bun install
 ```
 
-3. Set up environment variables
+3. **Set up environment variables**
 ```bash
-cp .env.example .env.local
+cp .env.example .env
 ```
 
-Fill in your Cosmic credentials:
-- `COSMIC_BUCKET_SLUG` - Your Cosmic bucket slug
-- `COSMIC_READ_KEY` - Your Cosmic read key  
-- `COSMIC_WRITE_KEY` - Your Cosmic write key
+Fill in your Cosmic CMS credentials:
+```env
+COSMIC_BUCKET_SLUG=your-bucket-slug
+COSMIC_READ_KEY=your-read-key
+COSMIC_WRITE_KEY=your-write-key
+```
 
-4. Run the development server
+4. **Run the development server**
 ```bash
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the application.
+5. **Open your browser**
+Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Cosmic SDK Examples
+## 🗄️ Content Management
 
-### Fetching Movies with Relationships
-```typescript
-// Get movies with connected data
-const movies = await cosmic.objects
-  .find({
-    type: 'movies',
-    'metadata.status.key': 'published'
-  })
-  .props(['id', 'title', 'slug', 'metadata'])
-  .depth(1)
-```
+This project uses Cosmic CMS with the following content structure:
 
-### Getting Movie Reviews
-```typescript
-// Fetch reviews for a specific movie
-const reviews = await cosmic.objects
-  .find({
-    type: 'reviews',
-    'metadata.movie': movieId
-  })
-  .depth(1)
-  .sort('metadata.review_date')
-```
-
-### User Movie Tracking
-```typescript
-// Get user's watchlist
-const watchlist = await cosmic.objects
-  .find({
-    type: 'user-movie-states',
-    'metadata.user_name': 'Sarah Johnson',
-    'metadata.status.key': 'want_to_watch'
-  })
-  .depth(1)
-```
-
-### Creating Movie Lists
-```typescript
-// Create a new movie list
-await cosmic.objects.insertOne({
-  type: 'lists',
-  title: 'Greatest Films of All Time',
-  metadata: {
-    list_type: { key: 'public', value: 'Public' },
-    description: '<p>Essential cinema masterpieces</p>',
-    movies: [movieId1, movieId2],
-    created_by: 'Film Society Admin',
-    creation_date: '2024-01-15'
-  }
-})
-```
-
-## Cosmic CMS Integration
-
-### Object Types Structure
-
-- **Movies** - Core movie data with IMDb integration, posters, cast, and ratings
-- **Reviews** - User reviews with ratings, spoiler flags, and viewing dates  
-- **Lists** - Curated movie collections (public/private/collaborative)
-- **People** - Cast and crew profiles with filmographies
-- **User Movie States** - Personal tracking (watchlist, watched, ratings)
-- **Movie Submissions** - Community movie additions awaiting approval
+### Content Types
+- **Movies** - Movie information, metadata, and media
+- **Reviews** - User reviews with ratings and spoiler flags
+- **Lists** - Curated movie collections
+- **People** - Cast and crew profiles
+- **User Movie States** - Personal tracking data
+- **Movie Submissions** - Community submissions for new movies
 
 ### Key Features
+- **Rich Metadata** - Comprehensive movie information
+- **Relationship Fields** - Connected content between movies, reviews, and people
+- **Image Optimization** - Automatic image processing with Imgix
+- **Content Validation** - Structured data with required fields
 
-- **Content Relationships** - Movies connect to reviews, lists, and user states
-- **Rich Media** - Poster images, backdrop galleries, and profile photos
-- **Social Features** - User ratings, reviews, lists, and community discovery
-- **Admin Workflow** - Movie submission approval process
-- **Personal Tracking** - Watchlist, watched status, and rating history
+## 🎬 Usage Examples
 
-## Deployment Options
+### Movie Discovery
+- Browse movies by genre, year, or rating
+- Use advanced filters to find specific films
+- Get personalized recommendations
 
-### Vercel (Recommended)
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Configure environment variables in Vercel dashboard
-4. Deploy automatically
+### Personal Tracking
+- Add movies to your watchlist
+- Rate and review films you've watched
+- Keep personal notes on your movie experiences
 
-### Netlify
-1. Connect your GitHub repository
-2. Set build command: `bun run build`
-3. Set publish directory: `out` (if using static export)
-4. Configure environment variables
+### Social Interaction
+- Read community reviews
+- Create and share movie lists
+- Submit new movies to the database
 
-### Environment Variables for Production
+## 🚀 Deployment
 
-Set these in your deployment platform:
-- `COSMIC_BUCKET_SLUG` - Your Cosmic bucket slug
-- `COSMIC_READ_KEY` - Your Cosmic read key
-- `COSMIC_WRITE_KEY` - Your Cosmic write key (for write operations)
+This project is optimized for deployment on Vercel:
 
-<!-- README_END -->
+1. **Deploy to Vercel**
+```bash
+vercel
+```
+
+2. **Set environment variables** in your Vercel dashboard
+
+3. **Configure your Cosmic CMS** bucket with the required content types
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with [Cosmic CMS](https://cosmicjs.com) for content management
+- Inspired by [Letterboxd](https://letterboxd.com) for the user experience
+- Movie data integration with IMDb
+- Icons by [Lucide](https://lucide.dev)
+
+## 📧 Support
+
+For support, email support@example.com or join our community discussions.
+
+---
+
+**Built with ❤️ for movie lovers everywhere**
