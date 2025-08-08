@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Play, X, ExternalLink } from 'lucide-react'
 
 interface MovieTrailerProps {
-  trailerUrl?: string
+  trailerUrl?: string | null
   movieTitle: string
   className?: string
 }
