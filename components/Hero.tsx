@@ -37,7 +37,21 @@ export default function Hero({ movies }: HeroProps) {
   }
 
   const currentMovie = movies[currentIndex]
-  const backdropUrl = currentMovie?.metadata?.poster_image?.imgix_url
+  
+  // Early return if currentMovie is undefined
+  if (!currentMovie) {
+    return (
+      <div className="relative h-[60vh] bg-surface flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-text-primary mb-4">
+            Loading...
+          </h1>
+        </div>
+      </div>
+    )
+  }
+
+  const backdropUrl = currentMovie.metadata?.poster_image?.imgix_url
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % movies.length)
@@ -70,10 +84,10 @@ export default function Hero({ movies }: HeroProps) {
             </h1>
             
             <div className="flex items-center gap-4 mb-6 text-white/80">
-              <span>{currentMovie.metadata.release_year}</span>
+              <span>{currentMovie.metadata?.release_year}</span>
               <span>•</span>
-              <span>{currentMovie.metadata.director}</span>
-              {currentMovie.metadata.imdb_rating && (
+              <span>{currentMovie.metadata?.director}</span>
+              {currentMovie.metadata?.imdb_rating && (
                 <>
                   <span>•</span>
                   <div className="flex items-center gap-1">
@@ -84,7 +98,7 @@ export default function Hero({ movies }: HeroProps) {
               )}
             </div>
 
-            {currentMovie.metadata.synopsis && (
+            {currentMovie.metadata?.synopsis && (
               <p className="text-white/90 text-lg mb-8 line-clamp-3">
                 {currentMovie.metadata.synopsis.replace(/<[^>]*>/g, '')}
               </p>
