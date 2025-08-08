@@ -83,15 +83,16 @@ export function useWatchlist(userName: string = 'Demo User') {
   }
 
   const toggleWatchlist = async (movie: Movie): Promise<boolean> => {
-    if (!movie.id) {
+    const movieId = movie.id
+    if (!movieId) {
       console.error('Movie ID is required for watchlist operations')
       return false
     }
     
-    const inWatchlist = isInWatchlist(movie.id)
+    const inWatchlist = isInWatchlist(movieId)
     
     if (inWatchlist) {
-      return await removeFromWatchlist(movie.id)
+      return await removeFromWatchlist(movieId)
     } else {
       return await addToWatchlist(movie)
     }
