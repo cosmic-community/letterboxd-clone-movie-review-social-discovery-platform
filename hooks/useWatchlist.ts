@@ -37,7 +37,7 @@ export function useWatchlist(userName: string = 'Demo User') {
       // In a real app, this would create a new UserMovieState object via API
       const newWatchlistItem: UserMovieState = {
         id: `temp-${Date.now()}`,
-        slug: `${userName.toLowerCase().replace(/\s+/g, '-')}-${movie.slug ?? 'unknown'}-watchlist`,
+        slug: `${userName.toLowerCase().replace(/\s+/g, '-')}-${movie.slug || 'unknown'}-watchlist`,
         title: `${userName}'s ${movie.title} Status`,
         type: 'user-movie-states',
         created_at: new Date().toISOString(),
@@ -83,7 +83,7 @@ export function useWatchlist(userName: string = 'Demo User') {
   }
 
   const toggleWatchlist = async (movie: Movie): Promise<boolean> => {
-    const movieId = movie.id ?? ''
+    const movieId = movie.id || ''
     if (!movieId) {
       console.error('Movie ID is required for watchlist operations')
       return false
