@@ -24,7 +24,7 @@ export default function MovieTrailer({ trailerUrl, movieTitle, className }: Movi
   }
 
   const videoId = getYouTubeVideoId(trailerUrl)
-  const embedUrl = videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0` : trailerUrl ?? ''
+  const embedUrl = videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0` : trailerUrl || ''
 
   const openModal = () => {
     setIsModalOpen(true)
@@ -83,7 +83,7 @@ export default function MovieTrailer({ trailerUrl, movieTitle, className }: Movi
                 <ExternalLink className="h-12 w-12 mb-4" />
                 <p className="text-lg mb-4">External trailer link</p>
                 <a
-                  href={trailerUrl ?? ''}
+                  href={trailerUrl || ''}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary flex items-center gap-2"
